@@ -97,15 +97,29 @@ public class StageResultsTest {
 
     @Test
     public void testAddModuleMark() {
+        
         System.out.println("Testing Add Functionality");
-        
-        empty.addModuleMark(10, 5);
-        empty.addModuleMark(20, 10);
-        empty.addModuleMark(40, 20);
-        
-        int expIntResult = 70;
+    int expIntResult = 10;
     double expDoubleResult = 35.0;
+        
+        empty.addModuleMark(10, 35);
+        
+    assertEquals("credits", expIntResult, empty.getTotalCredits());
+    assertEquals("total", expDoubleResult, empty.getTotalMarks(), 0.0);
+    empty.resetValues();
     
+    expIntResult = 20;
+    expDoubleResult = 70.0;
+        empty.addModuleMark(20, 35);
+        
+    assertEquals("credits", expIntResult, empty.getTotalCredits());
+    assertEquals("total", expDoubleResult, empty.getTotalMarks(), 0.0);
+    empty.resetValues();
+    
+    expIntResult = 40;
+    expDoubleResult = 140.0;
+        empty.addModuleMark(40, 35);
+        
     assertEquals("credits", expIntResult, empty.getTotalCredits());
     assertEquals("total", expDoubleResult, empty.getTotalMarks(), 0.0);
     empty.resetValues();
