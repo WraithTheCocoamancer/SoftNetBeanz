@@ -127,12 +127,38 @@ public class StageResultsTest {
 
     @Test
     public void testCalculateAverageSoFar() {
-        fail("Test not yet implemented"); 
+        // Test with no credits and no marks
+    assertEquals("empty", 0.0, empty.calculateAverageSoFar(), 0.0); 
+    // Test with 120 credits all at 50%
+    assertEquals("full @ 50%", 50.0, full.calculateAverageSoFar(), 0.0); 
+    // Test with 120 credits all at 100%
+    full.resetValues();
+    full.addModuleMark(120, 100.0);
+    assertEquals("full @ 100%", 100.0, full.calculateAverageSoFar(), 0.0); 
+    full.resetValues(); 
     }
 
     @Test
     public void testPredictClass() {
-        fail("Test not yet implemented"); 
+        System.out.println("predictClass");
+
+    // Array to hold the stage 3 marks
+    double[] marks = {0.00, 50.00, 50.00, 100.00, 39.99, 40.0,
+     49.99, 50.0, 59.99, 60.0, 69.99, 70.0, 99.99, 35.67,
+     44.22, 56.39, 64.00, 76.80};
+    // Array of corresponding classifications with no stage 2 marks
+    String[] expResult1 = {"No marks!", "Lower 2nd",
+     "Lower 2nd", "1st", "FAIL", "3rd", "3rd", "Lower 2nd",
+     "Lower 2nd", "Upper 2nd", "Upper 2nd", "1st", "1st",
+     "FAIL", "3rd", "Lower 2nd", "Upper 2nd", "1st"};
+
+    // Run tests with no stage 2 average
+    for (int count = 0; count < marks.length; count++) {
+     full.resetValues();
+     full.addModuleMark(120, marks[count]);
+     assertEquals("120 credits, mark = " + marks[count], expResult1[count],
+     full.predictClass());
+    } 
     }
     
 }
