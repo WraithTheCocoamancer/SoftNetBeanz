@@ -9,6 +9,8 @@ package uniDemo;
  *
  * @author mhill9
  */
-public class ITeach {
-    
+public interface ITeach 
+{
+    public void setCourseWork(String coursework);
+    public void teach();
 }
