@@ -20,5 +20,37 @@ public class Course {
      this.code = code;   
      this.room = room;
     }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Lecturer getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Lecturer teacher) {
+        this.teacher = teacher;
+    }
+
+    public String getCoursework() {
+        return coursework;
+    }
+
+    public void setCoursework(String coursework) {
+        this.coursework = coursework;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
     
 }
