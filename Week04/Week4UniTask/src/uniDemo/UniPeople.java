@@ -10,5 +10,9 @@ package uniDemo;
  * @author mhill9
  */
 public class UniPeople {
+    private Course course;
+    private int id;
+    private String name;
     
+    public UniPeople()
 }

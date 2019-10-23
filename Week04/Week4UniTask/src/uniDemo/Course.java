@@ -10,5 +10,15 @@ package uniDemo;
  * @author mhill9
  */
 public class Course {
+
+    private String code;
+    private Lecturer teacher;
+    private String coursework;
+    private String room;
+    public Course(String code, String room)
+    {
+     this.code = code;   
+     this.room = room;
+    }
     
 }
