@@ -9,7 +9,7 @@ package stocktracker.stockdatamodel;
  *
  * @author mhill9
  */
-public class StockItem {
+public abstract class StockItem {
     
     protected String name = "UNKNOWN";
     protected Integer quantityInStock = 0;
@@ -80,5 +80,6 @@ public class StockItem {
         }
     return inStock;
     }
+    public abstract StockType getItemType();
     
 }
