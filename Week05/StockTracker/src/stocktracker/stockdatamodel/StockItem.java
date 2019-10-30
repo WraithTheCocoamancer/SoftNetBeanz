@@ -9,13 +9,31 @@ package stocktracker.stockdatamodel;
  *
  * @author mhill9
  */
-public abstract class StockItem {
+import java.util.ArrayList;
+import utilities.*;
+
+public abstract class StockItem  implements ISubject{
     
     protected String name = "UNKNOWN";
     protected Integer quantityInStock = 0;
     protected Double sellingPrice = 1000000.00;
     protected Double costPrice = 1000000.00;
 
+    private ArrayList<IObserver> observers = null;
+           
+      @Override  
+      public Boolean registerObserver(IObserver o)
+      {
+          
+      }
+      
+     @Override
+      public Boolean removeObserver(IObserver o)
+      {
+      }
+      public void notifyObservers()
+      {
+      }
     
     public StockItem ()
     {
